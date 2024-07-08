@@ -30,3 +30,4 @@ python3 -m pip install --break-system-packages --user matplotlib
 python3 -m pip install --break-system-packages --user pandas
 python3 -m pip install --break-system-packages --user cvxpy
 python3 -m pip install --break-system-packages --user "jax[cpu]"
+python3 -m pip install --break-system-packages --user pyyaml
