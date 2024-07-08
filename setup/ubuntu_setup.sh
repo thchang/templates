@@ -15,12 +15,12 @@ apt install cmake
 apt install git
 
 # Install Python packages
-python3 -m pip install -u numpy
-python3 -m pip install -u scipy
-python3 -m pip install -u matplotlib
-python3 -m pip install -u pandas
-python3 -m pip install -u cvxpy
-python3 -m pip install -u "jax[cpu]"
+python3 -m pip install --user numpy
+python3 -m pip install --user scipy
+python3 -m pip install --user matplotlib
+python3 -m pip install --user pandas
+python3 -m pip install --user cvxpy
+python3 -m pip install --user "jax[cpu]"
 
 # Install LaTeX
 apt install tex-common

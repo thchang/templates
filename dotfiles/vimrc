@@ -1,3 +1,12 @@
 set expandtab
+au BufEnter Makefile set expandtab!
 set tabstop=4
 set ai
+
+syntax on
+colorscheme default
+
+set spell spelllang=en_us
+au BufEnter *.* set nospell
+au BufEnter *.txt set spell spelllang=en_us
+au BufEnter *.tex set spell spelllang=en_us
