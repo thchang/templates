@@ -21,6 +21,7 @@ python3 -m pip install --user matplotlib
 python3 -m pip install --user pandas
 python3 -m pip install --user cvxpy
 python3 -m pip install --user "jax[cpu]"
+python3 -m pip install --user pyyaml
 
 # Install LaTeX
 apt install tex-common
