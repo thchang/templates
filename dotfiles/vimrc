@@ -6,7 +6,9 @@ set ai
 syntax on
 colorscheme default
 
-set spell spelllang=en_us
-au BufEnter *.* set nospell
-au BufEnter *.txt set spell spelllang=en_us
-au BufEnter *.tex set spell spelllang=en_us
+set nospell
+au BufEnter *.txt,*.tex,*.md,*.rst set spell spelllang=en_us
+au BufEnter *.txt,*.tex,*.md,*.rst set spellfile=~/Git/templates/vim/myDict.utf-8.add
+
+set textwidth=79
+set wrapmargin=2
