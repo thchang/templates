@@ -167,3 +167,9 @@ generic
 AcquisitionFunction
 SurrogateOptimizer
 evaluateSimulation
+parallelizable
+grey
+checkpointed
+subtasks
+modularizes
+tradeoffs
