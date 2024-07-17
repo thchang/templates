@@ -1,13 +1,16 @@
 set expandtab
-au BufEnter Makefile set expandtab!
 set tabstop=4
+set textwidth=79
 set ai
 
 syntax on
 colorscheme default
 
-set nospell
-au BufEnter *.txt,*.tex,*.md,*.rst set spell spelllang=en_us spellfile=~/Git/templates/vim/thchang.en.utf-8.add
+set showcmd
+set is hls
 
-set textwidth=79
-set wrapmargin=2
+set nospell
+au BufEnter *.txt,*.tex,*.md,*.rst set spell spelllang=en_us
+    \ spellfile=~/Git/templates/vim/thchang.en.utf-8.add
+
+au BufEnter Makefile set expandtab! textwidth=9999
