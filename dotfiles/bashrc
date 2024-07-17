@@ -60,12 +60,9 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-# Set colored prompts for valid xterm windows and ssh sessions
+# Set colored prompts for valid xterm windows
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
-esac
-case "$(ps -o comm= -p $PPID)" in
-    sshd|*/sshd) color_prompt=yes;;
 esac
 
 # Set the prompt style to user@local:dir
@@ -77,13 +74,13 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@local:\w\$ '
 fi
-# If this is an xterm set the title to user@host:dir
+# If this is an xterm set the title to user@local:dir
 case "$TERM" in
 xterm*|rxvt*)
-    if [ "$force_color_prompt" = yes ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    if [ "$color_prompt" = yes ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@local:\[\033[01;34m\]\w\[\033[00m\]\$ '
     else
-        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+        PS1='${debian_chroot:+($debian_chroot)}\u@local:\w\$ '
     fi
 esac
 # If this is an ssh session set the title to user@host:dir
