@@ -8,6 +8,7 @@ colorscheme default
 
 set showcmd
 set is hls
+noh
 
 set nospell
 au BufEnter *.txt,*.tex,*.md,*.rst set spell spelllang=en_us
