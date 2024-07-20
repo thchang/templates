@@ -1,13 +1,12 @@
 # install xcode
 xcode-select --install
 
-# set bashrc -> bash_profile
-mv ~/.bashrc ~/.bash_profile
-
 # install and setup homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/tylerchang/.bash_profile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# set bashrc -> bash_profile
+mv ~/.bashrc ~/.bash_profile
+source ~/.bash_profile
 
 # install gcc compiler tools and set as defaults
 brew install gfortran
@@ -31,3 +30,9 @@ python3 -m pip install --break-system-packages --user pandas
 python3 -m pip install --break-system-packages --user cvxpy
 python3 -m pip install --break-system-packages --user "jax[cpu]"
 python3 -m pip install --break-system-packages --user pyyaml
+
+# other useful utils
+brew install tmux
+brew install libnotify
+brew install dbus-glib
+dbus-uuidgen --ensure=/opt/homebrew/var/lib/dbus/machine-id
