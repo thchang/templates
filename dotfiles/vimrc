@@ -10,6 +10,8 @@ set showcmd
 set is hls
 noh
 
+set belloff=all
+
 set nospell
 au BufEnter *.txt,*.tex,*.md,*.rst set spell spelllang=en_us
     \ spellfile=~/Git/templates/vim/thchang.en.utf-8.add
