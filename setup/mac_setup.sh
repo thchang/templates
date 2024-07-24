@@ -5,7 +5,7 @@ xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # set bashrc -> bash_profile
-mv ~/.bashrc ~/.bash_profile
+cp ~/Git/templates/dotfiles/bashrc ~/.bash_profile
 source ~/.bash_profile
 
 # install gcc compiler tools and set as defaults
