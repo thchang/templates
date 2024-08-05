@@ -3,6 +3,8 @@ set tabstop=4
 set textwidth=79
 set ai
 
+set ruler
+
 syntax on
 colorscheme default
 
