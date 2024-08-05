@@ -8,6 +8,10 @@ xcode-select --install
 cp ~/Git/templates/dotfiles/bashrc ~/.bash_profile
 source ~/.bash_profile
 
+# build and config tools
+brew install cmake
+brew install pkg-config
+
 # install gcc compiler tools and set as defaults
 brew install gfortran
 
@@ -36,3 +40,4 @@ brew install tmux
 brew install libnotify
 brew install dbus-glib
 dbus-uuidgen --ensure=/opt/homebrew/var/lib/dbus/machine-id
+brew install poppler
