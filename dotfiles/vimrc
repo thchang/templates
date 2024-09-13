@@ -3,6 +3,8 @@ set tabstop=4
 set textwidth=79
 set ai
 
+set ruler
+
 syntax on
 colorscheme default
 
@@ -10,10 +12,12 @@ set showcmd
 set is hls
 noh
 
+set belloff=all
+
 set nospell
 au BufEnter *.txt,*.tex,*.md,*.rst set spell spelllang=en_us
     \ spellfile=~/Git/templates/vim/thchang.en.utf-8.add
 
-au BufEnter Makefile set expandtab! textwidth=9999
-
-set belloff=all
+au BufEnter Makefile set expandtab!
+au BufEnter Makefile set textwidth=9999
+au BufEnter *.csv set textwidth=9999
