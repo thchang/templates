@@ -13,6 +13,8 @@ apt install gfortran
 apt install python3-pip
 apt install cmake
 apt install git
+apt install linux-tools-common
+apt install linux-tools-generic
 
 # Install Python packages
 python3 -m pip install --user numpy

@@ -15,3 +15,5 @@ au BufEnter *.txt,*.tex,*.md,*.rst set spell spelllang=en_us
     \ spellfile=~/Git/templates/vim/thchang.en.utf-8.add
 
 au BufEnter Makefile set expandtab! textwidth=9999
+
+set belloff=all
