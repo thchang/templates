@@ -139,4 +139,5 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Add environment variables here
+export BIBMGR_DATABASE_SAVE_PATH=$HOME/Git/thchang-refs
 ## export GHP=ghp_123
