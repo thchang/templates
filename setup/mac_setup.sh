@@ -23,21 +23,16 @@ ln -s /opt/homebrew/bin/cpp-14 /opt/homebrew/bin/cpp
 # install command line latex (pdflatex, lualatex, etc)
 brew install --cask mactex-no-gui
 
+# other useful utils
+brew install dbus-glib
+dbus-uuidgen --ensure=/opt/homebrew/var/lib/dbus/machine-id
+brew install libnotify
+brew install openmpi
+brew install poppler
+brew install tmux
+
 # install python3 and pip3 and configure
 brew install python3
 
 # install python packages
-python3 -m pip install --break-system-packages --user numpy
-python3 -m pip install --break-system-packages --user scipy
-python3 -m pip install --break-system-packages --user matplotlib
-python3 -m pip install --break-system-packages --user pandas
-python3 -m pip install --break-system-packages --user cvxpy
-python3 -m pip install --break-system-packages --user "jax[cpu]"
-python3 -m pip install --break-system-packages --user pyyaml
-
-# other useful utils
-brew install tmux
-brew install libnotify
-brew install dbus-glib
-dbus-uuidgen --ensure=/opt/homebrew/var/lib/dbus/machine-id
-brew install poppler
+python3 -m pip install --break-system-packages --user -r PYTHON_REQUIREMENTS
