@@ -3,7 +3,7 @@
 ## Template script for SGE job submission -- update as needed
 
 ## Sets the job queue and project code, if relevant
-#$ -q reddev.q
+#$ -q queuename.q
 ##$ -P my_project
 
 ## Sets the job name
@@ -20,7 +20,7 @@
 ##$ -l h_rt=<hh:mm:ss>
 
 ## Uncomment to set email address and receive email updates on job status
-##$ -M firstname.lastname@siemens.com
+##$ -M firstname.lastname@email.com
 ##$ -m ea
 
 ## Uncomment one of the following to set parallelism mode
