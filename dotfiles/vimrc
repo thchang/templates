@@ -21,3 +21,6 @@ au BufEnter *.txt,*.tex,*.md,*.rst set spell spelllang=en_us
 au BufEnter Makefile set expandtab!
 au BufEnter Makefile set textwidth=9999
 au BufEnter *.csv set textwidth=9999
+au BufEnter *.yaml set textwidth=9999
+au BufEnter *.toml set textwidth=9999
+au BufEnter *.cpp set textwidth=99
