@@ -3,12 +3,13 @@ coverage
 dash
 flake8
 flake8-pyproject
-"jax[cpu]"
+jax[cpu]
 kaleido
 matplotlib
 mpi4py
 numpy
 pandas
+peft
 plotly
 pytest
 pytest-cov
@@ -17,3 +18,6 @@ scipy
 scikit-learn
 setuptools
 torch
+tokenizers
+transformers
+tqdm
