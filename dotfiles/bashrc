@@ -138,7 +138,15 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Add environment variables here
+# Set specific data paths
 export BIBMGR_DATABASE_SAVE_PATH=`pwd`/Git/thchang-refs
-## export OPENAI_API_KEY=abc_123
-## export GHP=ghp_123
+export HUGGING_FACE_MODEL_PATH="`pwd`/Git"
+
+# Add install directories here
+export PATH="$PATH:`pwd`/.lmstudio/bin"
+export PATH="`pwd`/.opencode/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+
+# Load API tokens
+source .api_keys.sh

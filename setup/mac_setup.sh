@@ -31,8 +31,9 @@ brew install openmpi
 brew install poppler
 brew install tmux
 
-# install python3 and pip3 and configure
+# install python3, pip3, and uv
 brew install python3
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # install python packages
 python3 -m pip install --break-system-packages --user -r PYTHON_REQUIREMENTS

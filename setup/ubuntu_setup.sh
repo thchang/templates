@@ -18,6 +18,7 @@ apt install cmake
 apt install git
 apt install linux-tools-common
 apt install linux-tools-generic
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Install Python packages
 python3 -m pip install --user -r PYTHON_REQUIREMENTS
