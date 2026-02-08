@@ -144,9 +144,10 @@ export HUGGING_FACE_MODEL_PATH="`pwd`/Git"
 
 # Add install directories here
 export PATH="$PATH:`pwd`/.lmstudio/bin"
+export PATH="$PATH:`pwd`/Git/llama.cpp/build/bin"
 export PATH="`pwd`/.opencode/bin:$PATH"
 
 . "$HOME/.local/bin/env"
 
 # Load API tokens
-source .api_keys.sh
+source .api_keys
