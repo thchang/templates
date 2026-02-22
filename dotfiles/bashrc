@@ -139,13 +139,13 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Set specific data paths
-export BIBMGR_DATABASE_SAVE_PATH=`pwd`/Git/thchang-refs
-export HUGGING_FACE_MODEL_PATH="`pwd`/Git"
+export BIBMGR_DATABASE_SAVE_PATH="$HOME/Git/thchang-refs"
+export HUGGING_FACE_MODEL_PATH="$HOME/Models"
 
 # Add install directories here
-export PATH="$PATH:`pwd`/.lmstudio/bin"
-export PATH="$PATH:`pwd`/Git/llama.cpp/build/bin"
-export PATH="`pwd`/.opencode/bin:$PATH"
+export PATH="$PATH:$HOME/.lmstudio/bin"
+export PATH="$PATH:$HOME/Git/llama.cpp/build/bin"
+export PATH="$HOME/.opencode/bin:$PATH"
 
 . "$HOME/.local/bin/env"
 
