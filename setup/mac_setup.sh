@@ -5,7 +5,8 @@ xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # set bashrc -> bash_profile
-cp ~/Git/templates/dotfiles/bashrc ~/.bash_profile
+ln -s ~/Git/templates/dotfiles/bashrc ~/.bash_profile
+ln -s ~/Git/templates/dotfiles/vimrc ~/.vimrc
 source ~/.bash_profile
 
 # build and config tools
