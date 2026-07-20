@@ -146,6 +146,7 @@ export HUGGING_FACE_MODEL_PATH="$HOME/Models"
 export PATH="$PATH:$HOME/.lmstudio/bin"
 export PATH="$PATH:$HOME/Git/llama.cpp/build/bin"
 export PATH="$HOME/.opencode/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 . "$HOME/.local/bin/env"
 
