@@ -1,0 +1,80 @@
+# Fully encapsulated micromamba/conda environment for running with a local,
+# editable-mode torchtitan checkout.
+#
+# torch itself is deliberately NOT a conda/pip dependency here: torchtitan
+# tracks PyTorch nightlies, so it's installed via `--pre` from the nightly
+# wheel index below (mirrors what .github/workflows/*.yaml and
+# .ci/docker/common/install_conda.sh do, as of 2026-07-31, CUDA 13.0 / cu130).
+#
+# Create:   micromamba env create -f environment.yaml
+# Activate: micromamba activate torchtitan
+#
+# Re-sync after a pull that changes deps:
+#   micromamba env update -f environment.yaml --prune
+name: torchtitan
+channels:
+  - conda-forge
+# Blocks the one real global -> env leak path: Python's default of adding
+# ~/.local/lib/pythonX.Y/site-packages (the "user site" dir) to sys.path.
+# Without this, anything ever installed globally with `pip install --user`
+# would be silently importable inside this env too. Takes effect on
+# `micromamba activate torchtitan` (see note below about the creation step).
+variables:
+  PYTHONNOUSERSITE: "1"
+dependencies:
+  - python=3.12
+  - pip
+  - git
+  - cmake>=3.22
+  - ninja>=1.10
+  # Conda-forge's python package ships Python.h / headers already
+  # (unlike Debian/Ubuntu apt python3, which splits them into python3-dev) -
+  # this is what covers the "-dev headers" requirement for source-built
+  # extensions (helion, triton, etc.) without needing a separate package.
+  - c-compiler
+  - cxx-compiler
+  - pip:
+      # --- PyTorch nightly stack (must be installed together, same index) ---
+      - --pre
+      - --extra-index-url https://download.pytorch.org/whl/nightly/cu130
+      - torch
+      - torchvision
+      - torchao
+
+      # --- torchtitan core deps (.ci/docker/requirements.txt) ---
+      - torchdata>=0.8.0
+      - datasets>=3.6.0,<4.8.0
+      - tokenizers>=0.15.0
+      - safetensors
+      - tyro>=1.0.5
+      - tensorboard
+      - wandb
+      - einops
+      - pillow
+      - spmd_types==0.2.1
+
+      # --- dev/test tooling (.ci/docker/requirements-dev.txt) ---
+      - expecttest>=0.2.0
+      - helion==1.1.0
+      - pytest==7.3.2
+      - pytest-cov
+      - pre-commit
+      - pyrefly==0.45.1
+      - numpy
+
+      # --- flux experiment extras (.ci/docker/requirements-flux.txt) ---
+      - flash-linear-attention
+
+      # --- VLM extras (.ci/docker/requirements-vlm.txt) ---
+      - sentencepiece
+      - av
+
+      # --- transformers pin (requirements-vlm.txt / requirements-transformers-modeling-backend.txt) ---
+      - transformers==5.9.0
+
+      # --- local editable install ---
+      # No --no-deps needed: torchtitan's declared deps (torchdata, datasets,
+      # tokenizers, etc.) are already pinned as sibling entries above, in the
+      # same pip resolve, and it doesn't declare torch/torchao itself - so
+      # there's nothing for an unconstrained resolve to clobber.
+      - -e /path/to/Git/torchtitan
